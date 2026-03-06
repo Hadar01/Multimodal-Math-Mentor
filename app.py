@@ -92,6 +92,14 @@ def main():
         run_pipeline(edited_text)
         st.rerun()
 
+    # Guardrail blocked
+    if st.session_state.get("guardrail_blocked"):
+        st.error(
+            f"**Input blocked by safety guardrail.**\n\n"
+            f"{st.session_state.guardrail_blocked}\n\n"
+            f"Please rephrase your input as a math problem and try again."
+        )
+
     # HITL pauses
     if st.session_state.hitl_stage == "low_confidence_input":
         render_hitl_low_confidence()

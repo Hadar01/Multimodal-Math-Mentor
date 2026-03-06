@@ -6,6 +6,7 @@ import streamlit as st
 
 from agents import (
     log_agent,
+    guardrail_agent,
     parser_agent,
     intent_router,
     solver_agent,
@@ -32,6 +33,8 @@ DEFAULTS = {
     "input_mode": None,
     "free_tries_used": 0,
     "using_own_key": False,
+    "guardrail_passed": False,
+    "guardrail_blocked": None,
 }
 
 
@@ -49,6 +52,7 @@ def reset_pipeline():
         "explanation", "hitl_stage", "pipeline_complete",
         "rag_context", "memory_context", "agent_trace",
         "extraction_confidence", "input_mode",
+        "guardrail_passed", "guardrail_blocked",
     ):
         st.session_state[key] = DEFAULTS[key]
 
@@ -56,6 +60,16 @@ def reset_pipeline():
 def run_pipeline(text: str):
     """Execute the 5-agent pipeline, pausing at HITL checkpoints."""
 
+    # ── Stage 0: Guardrail ──
+    if st.session_state.get("guardrail_passed") is not True:
+        with st.spinner("Checking input …"):
+            result = guardrail_agent(text)
+        if not result["allowed"]:
+            st.session_state.guardrail_blocked = result["reason"]
+            st.session_state.pipeline_complete = False
+            return
+        st.session_state.guardrail_passed = True
+        st.session_state.guardrail_blocked = None
     # ── HITL: low OCR/ASR confidence ──
     conf = st.session_state.extraction_confidence
     if conf == "low" and st.session_state.hitl_stage is None:
