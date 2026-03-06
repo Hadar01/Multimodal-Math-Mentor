@@ -8,8 +8,8 @@ openai>=1.0.0
 # Vector store for RAG & Memory
 chromadb>=0.6.0
 
-# Math OCR — Pix2Tex (LaTeX OCR, offline, specialised for math equations)
-pix2tex>=0.1.0
+# Math OCR — Pix2Tex (heavy; optional, not recommended on low-RAM Render plans)
+# pix2tex>=0.1.0
 
 # OCR fallback — OpenAI Vision is 2nd choice, EasyOCR is 3rd
 # easyocr>=1.7.1              # optional: uncomment for offline fallback

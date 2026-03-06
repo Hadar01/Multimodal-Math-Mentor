@@ -61,6 +61,22 @@ def _mime_type(name: str, fallback: str = "application/octet-stream") -> str:
 _pix2tex_model = None
 
 
+def _should_use_pix2tex() -> bool:
+    """Return False in low-memory deployments unless explicitly enabled."""
+    # Render sets RENDER=true in the service environment.
+    running_on_render = os.getenv("RENDER", "").lower() == "true"
+    flag = os.getenv("ENABLE_PIX2TEX", "").strip().lower()
+
+    # Explicit flag wins: set ENABLE_PIX2TEX=1/true/yes to force-enable.
+    if flag in {"1", "true", "yes", "on"}:
+        return True
+    if flag in {"0", "false", "no", "off"}:
+        return False
+
+    # Default behavior: disabled on Render, enabled elsewhere.
+    return not running_on_render
+
+
 def _get_pix2tex():
     """Lazy-load and cache the Pix2Tex LatexOCR model."""
     global _pix2tex_model
@@ -75,38 +91,41 @@ def _get_pix2tex():
 def extract_text_from_image(uploaded_file) -> tuple[str, str]:
     """
     Extract math from an image.
-    1st choice: Pix2Tex (LaTeX OCR — offline, specialised for math).
-    2nd choice: OpenAI Vision (if Pix2Tex confidence is low or fails).
+    1st choice: Pix2Tex (optional; disabled by default on low-memory Render).
+    2nd choice: OpenAI Vision (primary cloud-safe fallback).
     3rd choice: EasyOCR (final fallback).
     """
     img_bytes = uploaded_file.getvalue()
 
     # ── 1. Pix2Tex (LaTeX OCR) ──
     pix2tex_error = None
-    try:
-        from PIL import Image
-        from io import BytesIO as _BytesIO
+    if _should_use_pix2tex():
+        try:
+            from PIL import Image
+            from io import BytesIO as _BytesIO
 
-        img = Image.open(_BytesIO(img_bytes))
-        model = _get_pix2tex()
-        latex = model(img)
+            img = Image.open(_BytesIO(img_bytes))
+            model = _get_pix2tex()
+            latex = model(img)
 
-        if latex and latex.strip():
-            latex = latex.strip()
-            # Heuristic confidence: if the output has common LaTeX commands
-            # and isn't too short, consider it high confidence
-            has_latex = any(cmd in latex for cmd in ("\\frac", "\\sqrt", "^", "_", "=", "+", "-"))
-            is_reasonable_length = len(latex) > 5
-            if has_latex and is_reasonable_length:
-                # Wrap in $$ for display if not already wrapped
-                display = f"$${latex}$$" if not latex.startswith("$") else latex
-                return (display, "high")
-            else:
-                pix2tex_error = f"Low confidence output: {latex[:80]}"
-    except ImportError:
-        pix2tex_error = "pix2tex not installed"
-    except Exception as exc:
-        pix2tex_error = f"Pix2Tex error: {exc}"
+            if latex and latex.strip():
+                latex = latex.strip()
+                # Heuristic confidence: if the output has common LaTeX commands
+                # and isn't too short, consider it high confidence
+                has_latex = any(cmd in latex for cmd in ("\\frac", "\\sqrt", "^", "_", "=", "+", "-"))
+                is_reasonable_length = len(latex) > 5
+                if has_latex and is_reasonable_length:
+                    # Wrap in $$ for display if not already wrapped
+                    display = f"$${latex}$$" if not latex.startswith("$") else latex
+                    return (display, "high")
+                else:
+                    pix2tex_error = f"Low confidence output: {latex[:80]}"
+        except ImportError:
+            pix2tex_error = "pix2tex not installed"
+        except Exception as exc:
+            pix2tex_error = f"Pix2Tex error: {exc}"
+    else:
+        pix2tex_error = "disabled by low-memory mode"
 
     # ── 2. OpenAI Vision (LLM fallback) ──
     openai_error = None
