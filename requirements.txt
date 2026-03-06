@@ -1,0 +1,30 @@
+# ── Multimodal Math Mentor – Dependencies ──
+# Core UI
+streamlit>=1.30.0
+
+# LLM + Vision + Whisper API client – OpenAI
+openai>=1.0.0
+
+# Vector store for RAG & Memory
+chromadb>=0.4.22
+
+# Math OCR — Pix2Tex (LaTeX OCR, offline, specialised for math equations)
+pix2tex>=0.1.0
+
+# OCR fallback — OpenAI Vision is 2nd choice, EasyOCR is 3rd
+# easyocr>=1.7.1              # optional: uncomment for offline fallback
+
+# Audio transcription — OpenAI Whisper API is primary (no ffmpeg needed)
+# openai-whisper>=20231117    # optional: uncomment for local offline fallback (needs ffmpeg)
+
+# Image handling
+Pillow>=10.0.0
+
+# Utility – load .env files so API keys stay out of code
+python-dotenv>=1.0.0
+
+# In-browser audio recording (optional – for live mic capture)
+audio-recorder-streamlit>=0.0.8
+
+# PDF text extraction – drop PDFs into docs/ for auto-ingestion
+pdfplumber>=0.10.0

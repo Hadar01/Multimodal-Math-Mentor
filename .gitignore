@@ -1,0 +1,53 @@
+# Environment & secrets — NEVER commit these
+.env
+*.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+*.egg
+.eggs/
+
+# Virtual environment
+.venv/
+venv/
+ENV/
+env/
+
+# Streamlit
+.streamlit/secrets.toml
+
+# ChromaDB persistent data (ephemeral on free hosts)
+.chroma_data/
+chroma_data/
+
+# Pix2Tex model cache (large, re-downloaded on deploy)
+~/.cache/pix2tex/
+*.pth
+*.ckpt
+*.bin
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDEs
+.vscode/settings.json
+.idea/
+*.swp
+*.swo
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Logs
+*.log
+logs/

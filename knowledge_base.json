@@ -1,0 +1,477 @@
+[
+  {
+    "topic": "algebra",
+    "formula": "Quadratic Formula: x = (-b ± √(b²-4ac)) / 2a — solves ax²+bx+c = 0. Discriminant D = b²-4ac determines nature of roots: D>0 two distinct real, D=0 equal, D<0 complex.",
+    "example": "Solve 2x²+3x-2=0 → a=2,b=3,c=-2 → D=9+16=25>0 → x=(-3±5)/4 → x=0.5 or x=-2"
+  },
+  {
+    "topic": "algebra",
+    "formula": "Factoring: ax²+bx+c = a(x-r₁)(x-r₂) where r₁,r₂ are roots",
+    "example": "x²-5x+6 = (x-2)(x-3)"
+  },
+  {
+    "topic": "algebra",
+    "formula": "Completing the square: x²+bx = (x+b/2)²-(b/2)²",
+    "example": "x²+6x+5=0 → (x+3)²-9+5=0 → (x+3)²=4 → x=-1 or x=-5"
+  },
+  {
+    "topic": "algebra",
+    "formula": "Vieta's formulas: for ax²+bx+c=0, sum of roots = -b/a, product of roots = c/a. For cubic ax³+bx²+cx+d=0: Σr = -b/a, Σr₁r₂ = c/a, r₁r₂r₃ = -d/a",
+    "example": "x²-7x+12=0 → sum=7, product=12 → roots are 3 and 4"
+  },
+  {
+    "topic": "algebra",
+    "formula": "Arithmetic Progression (AP): nth term aₙ = a + (n-1)d. Sum of n terms Sₙ = n/2 · [2a + (n-1)d] = n/2 · (first + last)",
+    "example": "AP: 3,7,11,15,… → a=3, d=4 → a₁₀=3+9·4=39. S₁₀=10/2·(3+39)=210"
+  },
+  {
+    "topic": "algebra",
+    "formula": "Geometric Progression (GP): nth term aₙ = a·rⁿ⁻¹. Sum of n terms Sₙ = a(rⁿ-1)/(r-1) for r≠1. Sum of infinite GP (|r|<1): S∞ = a/(1-r)",
+    "example": "GP: 2,6,18,… → a=2, r=3 → a₅=2·3⁴=162. S₅=2(3⁵-1)/2=242. Infinite GP 1+1/2+1/4+…= 1/(1-1/2)=2"
+  },
+  {
+    "topic": "algebra",
+    "formula": "Harmonic Progression (HP): a,b,c in HP iff 1/a,1/b,1/c in AP. Harmonic mean of a,b = 2ab/(a+b)",
+    "example": "HP: 1, 1/2, 1/3, 1/4,… → reciprocals 1,2,3,4 form AP"
+  },
+  {
+    "topic": "algebra",
+    "formula": "AM-GM-HM Inequality: For positive numbers, AM ≥ GM ≥ HM. AM = (a+b)/2, GM = √(ab), HM = 2ab/(a+b). Equality iff a=b.",
+    "example": "a=4, b=9: AM=6.5, GM=6, HM≈5.54 → 6.5 ≥ 6 ≥ 5.54 ✓"
+  },
+  {
+    "topic": "algebra",
+    "formula": "Binomial Theorem: (a+b)ⁿ = Σ(k=0 to n) C(n,k)·aⁿ⁻ᵏ·bᵏ. General term Tₖ₊₁ = C(n,k)·aⁿ⁻ᵏ·bᵏ. Middle term when n is even: T_{n/2+1}",
+    "example": "(x+2)⁴ = x⁴ + 4·x³·2 + 6·x²·4 + 4·x·8 + 16 = x⁴+8x³+24x²+32x+16"
+  },
+  {
+    "topic": "algebra",
+    "formula": "Binomial coefficient properties: C(n,r) = C(n,n-r). C(n,0)+C(n,1)+…+C(n,n) = 2ⁿ. C(n,0)-C(n,1)+C(n,2)-… = 0",
+    "example": "Sum of coefficients in (1+x)¹⁰ = 2¹⁰ = 1024"
+  },
+  {
+    "topic": "algebra",
+    "formula": "Remainder Theorem: When polynomial p(x) is divided by (x-a), remainder = p(a). Factor Theorem: (x-a) is a factor of p(x) iff p(a) = 0",
+    "example": "p(x)=x³-6x²+11x-6, p(1)=1-6+11-6=0 → (x-1) is a factor"
+  },
+  {
+    "topic": "algebra",
+    "formula": "Partial Fractions: A/(x-a) + B/(x-b) for distinct linear factors. A/(x-a) + B/(x-a)² for repeated. (Ax+B)/(x²+px+q) for irreducible quadratic",
+    "example": "1/((x-1)(x+2)) = A/(x-1) + B/(x+2) → A=1/3, B=-1/3"
+  },
+  {
+    "topic": "algebra",
+    "formula": "Logarithm properties: log(ab) = log(a)+log(b), log(a/b) = log(a)-log(b), log(aⁿ) = n·log(a), logₐ(b) = ln(b)/ln(a), logₐ(b)·logᵦ(a) = 1",
+    "example": "log₂(32) = log₂(2⁵) = 5. log₃(81) = log₃(3⁴) = 4"
+  },
+  {
+    "topic": "algebra",
+    "formula": "Sum of powers: Σk = n(n+1)/2, Σk² = n(n+1)(2n+1)/6, Σk³ = [n(n+1)/2]²",
+    "example": "Σ(k=1 to 10) k² = 10·11·21/6 = 385"
+  },
+  {
+    "topic": "algebra",
+    "formula": "Complex Numbers: z = a+bi, |z| = √(a²+b²), arg(z) = arctan(b/a). Euler's form: z = |z|·e^(iθ) = |z|(cosθ + i·sinθ)",
+    "example": "z = 3+4i → |z| = 5, arg(z) = arctan(4/3) ≈ 53.13°"
+  },
+  {
+    "topic": "algebra",
+    "formula": "De Moivre's Theorem: (cosθ + i·sinθ)ⁿ = cos(nθ) + i·sin(nθ). nth roots of unity: e^(2πik/n) for k=0,1,…,n-1",
+    "example": "Cube roots of 1: 1, e^(2πi/3), e^(4πi/3) = 1, (-1+i√3)/2, (-1-i√3)/2. Their sum = 0."
+  },
+  {
+    "topic": "algebra",
+    "formula": "Mathematical Induction: Step 1 – Base case (verify for n=1). Step 2 – Inductive step: Assume true for n=k, prove for n=k+1.",
+    "example": "Prove Σ(1 to n) = n(n+1)/2: Base n=1: 1=1✓. If true for k, then Σ(1 to k+1) = k(k+1)/2 + (k+1) = (k+1)(k+2)/2 ✓"
+  },
+  {
+    "topic": "calculus",
+    "formula": "Power Rule (derivative): d/dx [xⁿ] = n·xⁿ⁻¹",
+    "example": "d/dx [x³] = 3x²"
+  },
+  {
+    "topic": "calculus",
+    "formula": "Chain Rule: d/dx [f(g(x))] = f'(g(x))·g'(x)",
+    "example": "d/dx [sin(x²)] = cos(x²)·2x"
+  },
+  {
+    "topic": "calculus",
+    "formula": "Product Rule: d/dx [f·g] = f'·g + f·g'",
+    "example": "d/dx [x·sin(x)] = sin(x) + x·cos(x)"
+  },
+  {
+    "topic": "calculus",
+    "formula": "Quotient Rule: d/dx [f/g] = (f'·g - f·g') / g²",
+    "example": "d/dx [sin(x)/x] = (cos(x)·x - sin(x)) / x²"
+  },
+  {
+    "topic": "calculus",
+    "formula": "Integration by parts: ∫u dv = uv - ∫v du. LIATE rule for choosing u: Logarithmic → Inverse trig → Algebraic → Trig → Exponential",
+    "example": "∫x·eˣ dx: u=x, dv=eˣdx → x·eˣ - ∫eˣ dx = x·eˣ - eˣ + C"
+  },
+  {
+    "topic": "calculus",
+    "formula": "Integration by substitution: ∫f(g(x))·g'(x)dx = ∫f(u)du where u=g(x)",
+    "example": "∫2x·cos(x²)dx: let u=x², du=2xdx → ∫cos(u)du = sin(u)+C = sin(x²)+C"
+  },
+  {
+    "topic": "calculus",
+    "formula": "Fundamental Theorem of Calculus: ∫ₐᵇ f(x)dx = F(b)-F(a) where F'=f",
+    "example": "∫₀² 2x dx = [x²]₀² = 4-0 = 4"
+  },
+  {
+    "topic": "calculus",
+    "formula": "L'Hôpital's Rule: if lim f(x)/g(x) is 0/0 or ∞/∞, then lim f(x)/g(x) = lim f'(x)/g'(x)",
+    "example": "lim(x→0) sin(x)/x = lim(x→0) cos(x)/1 = 1"
+  },
+  {
+    "topic": "calculus",
+    "formula": "Standard limits: lim(x→0) sin(x)/x = 1, lim(x→0) (1-cos(x))/x² = 1/2, lim(x→0) tan(x)/x = 1, lim(x→0) (eˣ-1)/x = 1, lim(x→0) ln(1+x)/x = 1, lim(x→∞)(1+1/x)ˣ = e",
+    "example": "lim(x→0) sin(5x)/(3x) = (5/3)·lim sin(5x)/(5x) = 5/3"
+  },
+  {
+    "topic": "calculus",
+    "formula": "Sandwich/Squeeze Theorem: If g(x) ≤ f(x) ≤ h(x) near a, and lim g(x) = lim h(x) = L, then lim f(x) = L",
+    "example": "-1 ≤ sin(x) ≤ 1 → -1/x ≤ sin(x)/x ≤ 1/x → lim(x→∞) sin(x)/x = 0"
+  },
+  {
+    "topic": "calculus",
+    "formula": "Continuity: f is continuous at x=a iff lim(x→a) f(x) = f(a). Three conditions: f(a) exists, limit exists, limit equals f(a).",
+    "example": "f(x)={x² for x≤1, 2x-1 for x>1} → f(1)=1, lim(x→1⁺)=1, lim(x→1⁻)=1 → continuous at x=1"
+  },
+  {
+    "topic": "calculus",
+    "formula": "Rolle's Theorem: If f is continuous on [a,b], differentiable on (a,b), and f(a)=f(b), then ∃c∈(a,b) such that f'(c)=0",
+    "example": "f(x)=x²-4x+3 on [1,3]: f(1)=0, f(3)=0 → f'(c)=2c-4=0 → c=2 ∈(1,3) ✓"
+  },
+  {
+    "topic": "calculus",
+    "formula": "Mean Value Theorem (Lagrange): If f is continuous on [a,b] and differentiable on (a,b), then ∃c∈(a,b): f'(c) = (f(b)-f(a))/(b-a)",
+    "example": "f(x)=x² on [1,3]: f'(c)=2c = (9-1)/(3-1) = 4 → c=2 ∈(1,3) ✓"
+  },
+  {
+    "topic": "calculus",
+    "formula": "Second Derivative Test: If f'(c)=0, then f''(c)>0 → local minimum, f''(c)<0 → local maximum, f''(c)=0 → inconclusive (use first derivative test)",
+    "example": "f(x)=x³-3x → f'(x)=3x²-3=0 → x=±1. f''(x)=6x → f''(1)=6>0 (min), f''(-1)=-6<0 (max)"
+  },
+  {
+    "topic": "calculus",
+    "formula": "Implicit Differentiation: Differentiate both sides w.r.t. x, treat y as function of x, solve for dy/dx",
+    "example": "x²+y²=25 → 2x+2y·(dy/dx)=0 → dy/dx = -x/y"
+  },
+  {
+    "topic": "calculus",
+    "formula": "Taylor Series: f(x) = Σ(n=0 to ∞) f⁽ⁿ⁾(a)/n! · (x-a)ⁿ. Maclaurin (a=0): eˣ=Σxⁿ/n!, sin(x)=Σ(-1)ⁿx²ⁿ⁺¹/(2n+1)!, cos(x)=Σ(-1)ⁿx²ⁿ/(2n)!",
+    "example": "eˣ ≈ 1 + x + x²/2 + x³/6 + … → e¹ ≈ 1+1+0.5+0.167+0.042 = 2.708"
+  },
+  {
+    "topic": "calculus",
+    "formula": "Definite Integral Properties: ∫ₐᵇ f(x)dx = -∫ᵇₐ f(x)dx. ∫₀ᵃ f(x)dx = ∫₀ᵃ f(a-x)dx (King property). If f(-x)=f(x) (even): ∫₋ₐᵃ f=2∫₀ᵃ f. If f(-x)=-f(x) (odd): ∫₋ₐᵃ f=0",
+    "example": "∫₀^π sin(x)dx using King: = ∫₀^π sin(π-x)dx = ∫₀^π sin(x)dx ✓. ∫₋₁¹ x³dx = 0 (odd function)"
+  },
+  {
+    "topic": "calculus",
+    "formula": "Area between curves: A = ∫ₐᵇ |f(x)-g(x)| dx, where a,b are intersection points",
+    "example": "Area between y=x² and y=x: intersection at x=0,1 → A = ∫₀¹(x-x²)dx = [x²/2-x³/3]₀¹ = 1/6"
+  },
+  {
+    "topic": "calculus",
+    "formula": "Variable Separable DE: dy/dx = f(x)·g(y) → ∫dy/g(y) = ∫f(x)dx + C",
+    "example": "dy/dx = xy → ∫dy/y = ∫xdx → ln|y| = x²/2+C → y = Ae^(x²/2)"
+  },
+  {
+    "topic": "calculus",
+    "formula": "Linear First-Order DE: dy/dx + P(x)y = Q(x). Integrating factor μ = e^(∫P dx). Solution: y·μ = ∫Q·μ dx + C",
+    "example": "dy/dx + y/x = x: IF=e^(∫1/x dx)=x → xy=∫x²dx=x³/3+C → y=x²/3+C/x"
+  },
+  {
+    "topic": "calculus",
+    "formula": "Reduction formulas: ∫sinⁿ(x)dx = -sinⁿ⁻¹(x)cos(x)/n + (n-1)/n · ∫sinⁿ⁻²(x)dx. Wallis' formula for ∫₀^(π/2) sinⁿ(x)dx",
+    "example": "∫₀^(π/2) sin⁴(x)dx = (3/4)·(1/2)·(π/2) = 3π/16"
+  },
+  {
+    "topic": "coordinate_geometry",
+    "formula": "Distance between two points: d = √((x₂-x₁)² + (y₂-y₁)²). Midpoint: ((x₁+x₂)/2, (y₁+y₂)/2)",
+    "example": "A(1,2), B(4,6) → d = √(9+16) = 5, midpoint = (2.5, 4)"
+  },
+  {
+    "topic": "coordinate_geometry",
+    "formula": "Section formula: Point dividing (x₁,y₁) and (x₂,y₂) in ratio m:n = ((mx₂+nx₁)/(m+n), (my₂+ny₁)/(m+n)). External division: change + to -",
+    "example": "Point dividing (1,2) and (4,5) in 2:1 = ((8+1)/3, (10+2)/3) = (3, 4)"
+  },
+  {
+    "topic": "coordinate_geometry",
+    "formula": "Straight Line forms: Slope-intercept y=mx+c. Point-slope y-y₁=m(x-x₁). Two-point: (y-y₁)/(y₂-y₁) = (x-x₁)/(x₂-x₁). Intercept: x/a+y/b=1. General: ax+by+c=0",
+    "example": "Line through (1,2) with slope 3: y-2=3(x-1) → y=3x-1"
+  },
+  {
+    "topic": "coordinate_geometry",
+    "formula": "Distance of point (x₁,y₁) from line ax+by+c=0: d = |ax₁+by₁+c| / √(a²+b²). Angle between two lines: tanθ = |m₁-m₂|/(1+m₁m₂)",
+    "example": "Distance of (3,4) from 3x+4y-5=0: d = |9+16-5|/5 = 20/5 = 4"
+  },
+  {
+    "topic": "coordinate_geometry",
+    "formula": "Circle: (x-h)²+(y-k)²=r² (centre (h,k), radius r). General form: x²+y²+2gx+2fy+c=0, centre=(-g,-f), r=√(g²+f²-c)",
+    "example": "x²+y²-4x+6y-3=0 → centre=(2,-3), r=√(4+9+3)=4"
+  },
+  {
+    "topic": "coordinate_geometry",
+    "formula": "Parabola standard forms: y²=4ax (opens right, focus (a,0), directrix x=-a). x²=4ay (opens up, focus (0,a), directrix y=-a). Latus rectum = 4a",
+    "example": "y²=12x → 4a=12, a=3, focus=(3,0), directrix x=-3, LR=12"
+  },
+  {
+    "topic": "coordinate_geometry",
+    "formula": "Ellipse: x²/a²+y²/b²=1 (a>b). Eccentricity e=√(1-b²/a²). Foci (±ae,0). Sum of focal distances = 2a. Latus rectum = 2b²/a",
+    "example": "x²/25+y²/16=1 → a=5,b=4, e=√(1-16/25)=3/5, foci=(±3,0)"
+  },
+  {
+    "topic": "coordinate_geometry",
+    "formula": "Hyperbola: x²/a²-y²/b²=1. Eccentricity e=√(1+b²/a²)>1. Foci (±ae,0). Asymptotes y=±(b/a)x. |difference of focal distances| = 2a",
+    "example": "x²/9-y²/16=1 → a=3,b=4, e=√(1+16/9)=5/3, asymptotes y=±(4/3)x"
+  },
+  {
+    "topic": "coordinate_geometry",
+    "formula": "Tangent to conic: For circle x²+y²=r²: xx₁+yy₁=r² at (x₁,y₁). For parabola y²=4ax: yy₁=2a(x+x₁). Condition for y=mx+c tangent to y²=4ax: c=a/m",
+    "example": "Tangent to y²=8x at (2,4): 4y=4(x+2) → y=x+2"
+  },
+  {
+    "topic": "geometry",
+    "formula": "Pythagorean Theorem: a² + b² = c² (right triangle)",
+    "example": "a=3, b=4 → c=√(9+16)=5"
+  },
+  {
+    "topic": "geometry",
+    "formula": "Area of a circle: A = πr². Circumference = 2πr",
+    "example": "r=5 → A = 25π ≈ 78.54"
+  },
+  {
+    "topic": "geometry",
+    "formula": "Area of triangle: A = ½·b·h. Using coordinates: A = ½|x₁(y₂-y₃)+x₂(y₃-y₁)+x₃(y₁-y₂)|",
+    "example": "Vertices (0,0),(4,0),(0,3) → A = ½|0(0-3)+4(3-0)+0(0-0)| = ½·12 = 6"
+  },
+  {
+    "topic": "geometry",
+    "formula": "Heron's formula: A = √[s(s-a)(s-b)(s-c)] where s=(a+b+c)/2 is semi-perimeter",
+    "example": "Triangle with sides 5,6,7: s=9, A=√(9·4·3·2)=√216=6√6≈14.7"
+  },
+  {
+    "topic": "trigonometry",
+    "formula": "Pythagorean identities: sin²θ+cos²θ=1, 1+tan²θ=sec²θ, 1+cot²θ=csc²θ",
+    "example": "If sinθ=3/5 → cos²θ=1-9/25=16/25 → cosθ=±4/5"
+  },
+  {
+    "topic": "trigonometry",
+    "formula": "Sum/Difference formulas: sin(A±B)=sinA·cosB±cosA·sinB. cos(A±B)=cosA·cosB∓sinA·sinB. tan(A±B)=(tanA±tanB)/(1∓tanA·tanB)",
+    "example": "sin(75°) = sin(45°+30°) = sin45·cos30 + cos45·sin30 = (√6+√2)/4"
+  },
+  {
+    "topic": "trigonometry",
+    "formula": "Double angle: sin(2A)=2sinA·cosA. cos(2A)=cos²A-sin²A=2cos²A-1=1-2sin²A. tan(2A)=2tanA/(1-tan²A)",
+    "example": "If sinA=3/5, cosA=4/5 → sin(2A)=2·(3/5)·(4/5)=24/25"
+  },
+  {
+    "topic": "trigonometry",
+    "formula": "Half angle: sin²(A/2)=(1-cosA)/2. cos²(A/2)=(1+cosA)/2. tan(A/2)=sinA/(1+cosA)=(1-cosA)/sinA",
+    "example": "cos60°=1/2 → sin²30°=(1-1/2)/2=1/4 → sin30°=1/2 ✓"
+  },
+  {
+    "topic": "trigonometry",
+    "formula": "Product-to-Sum: 2sinA·cosB = sin(A+B)+sin(A-B). 2cosA·cosB = cos(A-B)+cos(A+B). Sum-to-Product: sinC+sinD = 2sin((C+D)/2)·cos((C-D)/2)",
+    "example": "2sin75°·cos15° = sin90°+sin60° = 1+√3/2"
+  },
+  {
+    "topic": "trigonometry",
+    "formula": "Law of cosines: c² = a²+b²-2ab·cos(C). Law of sines: a/sinA = b/sinB = c/sinC = 2R (circumradius)",
+    "example": "a=5, b=7, C=60° → c²=25+49-35=39 → c≈6.24. Law of sines: a/sinA = 2R"
+  },
+  {
+    "topic": "trigonometry",
+    "formula": "Inverse trig ranges: sin⁻¹(x)∈[-π/2,π/2], cos⁻¹(x)∈[0,π], tan⁻¹(x)∈(-π/2,π/2). sin⁻¹(x)+cos⁻¹(x)=π/2. tan⁻¹(x)+tan⁻¹(1/x)=π/2 for x>0",
+    "example": "sin⁻¹(1/2) = π/6 = 30°. tan⁻¹(1)+tan⁻¹(1) ≠ π/2 but tan⁻¹(1)+tan⁻¹(1)=π/2... wait, tan⁻¹(2)+tan⁻¹(1/2)=π/2 ✓"
+  },
+  {
+    "topic": "trigonometry",
+    "formula": "General solutions: sinx=sinα → x=nπ+(-1)ⁿα. cosx=cosα → x=2nπ±α. tanx=tanα → x=nπ+α (n∈Z)",
+    "example": "sin(x)=1/2 → x=nπ+(-1)ⁿ·(π/6), giving x=π/6, 5π/6, 13π/6, …"
+  },
+  {
+    "topic": "linear_algebra",
+    "formula": "Determinant 2×2: det[[a,b],[c,d]] = ad-bc. Determinant 3×3 (expansion along first row): det = a₁₁(a₂₂a₃₃-a₂₃a₃₂) - a₁₂(a₂₁a₃₃-a₂₃a₃₁) + a₁₃(a₂₁a₃₂-a₂₂a₃₁)",
+    "example": "det[[1,2,3],[4,5,6],[7,8,9]] = 1(45-48)-2(36-42)+3(32-35) = -3+12-9 = 0"
+  },
+  {
+    "topic": "linear_algebra",
+    "formula": "Matrix multiplication (2×2): [[a,b],[c,d]]·[[e,f],[g,h]] = [[ae+bg,af+bh],[ce+dg,cf+dh]]. AB ≠ BA in general.",
+    "example": "[[1,2],[3,4]]·[[5,6],[7,8]] = [[19,22],[43,50]]"
+  },
+  {
+    "topic": "linear_algebra",
+    "formula": "Inverse of 2×2 matrix: A⁻¹ = (1/det(A))·[[d,-b],[-c,a]] for A=[[a,b],[c,d]]. A matrix is invertible iff det(A)≠0",
+    "example": "A=[[2,1],[5,3]], det=1 → A⁻¹=[[3,-1],[-5,2]]. Check: A·A⁻¹=I ✓"
+  },
+  {
+    "topic": "linear_algebra",
+    "formula": "Cramer's Rule: For AX=B with det(A)≠0: xᵢ = det(Aᵢ)/det(A), where Aᵢ is A with column i replaced by B",
+    "example": "x+y=3, 2x-y=3: det(A)=-3, x=det[3,1;3,-1]/-3=(-3-3)/-3=2, y=1"
+  },
+  {
+    "topic": "linear_algebra",
+    "formula": "Eigenvalue equation: det(A-λI)=0 gives eigenvalues. Eigenvector: (A-λI)v=0. Trace = sum of eigenvalues, det = product of eigenvalues",
+    "example": "A=[[2,1],[1,2]]: det(A-λI)=(2-λ)²-1=0 → λ=3,1. For λ=3: (A-3I)v=0 → v=[1,1]ᵀ"
+  },
+  {
+    "topic": "linear_algebra",
+    "formula": "Cayley-Hamilton Theorem: Every square matrix satisfies its own characteristic equation. If p(λ)=0 is characteristic equation, then p(A)=O (zero matrix)",
+    "example": "A=[[1,2],[3,4]], char eq: λ²-5λ-2=0 → A²-5A-2I=O ✓"
+  },
+  {
+    "topic": "linear_algebra",
+    "formula": "Properties of determinants: Swapping rows changes sign. Multiplying a row by k multiplies det by k. Adding multiple of one row to another doesn't change det. det(AB)=det(A)·det(B)",
+    "example": "det[[1,2],[3,4]]=-2 → swap rows: det[[3,4],[1,2]]=2 (sign changed) ✓"
+  },
+  {
+    "topic": "vectors",
+    "formula": "Dot product: a⃗·b⃗ = |a||b|cosθ = a₁b₁+a₂b₂+a₃b₃. Vectors perpendicular iff a⃗·b⃗=0. Projection of a⃗ on b⃗ = (a⃗·b⃗)/|b⃗|",
+    "example": "a⃗=(1,2,3), b⃗=(4,-5,6) → a⃗·b⃗=4-10+18=12. |a⃗|=√14, |b⃗|=√77, cosθ=12/√1078"
+  },
+  {
+    "topic": "vectors",
+    "formula": "Cross product: a⃗×b⃗ = |i  j  k; a₁ a₂ a₃; b₁ b₂ b₃|. |a⃗×b⃗| = |a||b|sinθ. Result is perpendicular to both. a⃗×b⃗ = -b⃗×a⃗",
+    "example": "a⃗=(1,2,3), b⃗=(4,5,6) → a⃗×b⃗ = (12-15, 12-6, 5-8) = (-3,6,-3)"
+  },
+  {
+    "topic": "vectors",
+    "formula": "Scalar triple product: [a⃗ b⃗ c⃗] = a⃗·(b⃗×c⃗) = det[a₁ a₂ a₃; b₁ b₂ b₃; c₁ c₂ c₃]. Volume of parallelepiped = |[a⃗ b⃗ c⃗]|. Coplanar iff [a⃗ b⃗ c⃗]=0",
+    "example": "a⃗=(1,0,0), b⃗=(0,1,0), c⃗=(0,0,1) → [a⃗ b⃗ c⃗]=det(I)=1, volume=1"
+  },
+  {
+    "topic": "vectors",
+    "formula": "Equation of line in 3D: r⃗ = a⃗ + λb⃗ (vector form). (x-x₁)/l = (y-y₁)/m = (z-z₁)/n (Cartesian form, direction ratios l,m,n)",
+    "example": "Line through (1,2,3) with direction (2,-1,4): (x-1)/2 = (y-2)/(-1) = (z-3)/4"
+  },
+  {
+    "topic": "vectors",
+    "formula": "Equation of plane: r⃗·n⃗ = d (vector form). ax+by+cz=d (Cartesian). Distance from point (x₀,y₀,z₀) to plane ax+by+cz+d=0: |ax₀+by₀+cz₀+d|/√(a²+b²+c²)",
+    "example": "Plane 2x+3y+6z=14, distance from origin = 14/√(4+9+36) = 14/7 = 2"
+  },
+  {
+    "topic": "vectors",
+    "formula": "Angle between planes: cosθ = |n⃗₁·n⃗₂|/(|n⃗₁|·|n⃗₂|). Angle between line (direction b⃗) and plane (normal n⃗): sinφ = |b⃗·n⃗|/(|b⃗|·|n⃗|)",
+    "example": "Planes x+y+z=1 and 2x-y+z=3: cosθ = |2-1+1|/(√3·√6) = 2/√18"
+  },
+  {
+    "topic": "probability",
+    "formula": "Bayes' Theorem: P(A|B) = P(B|A)·P(A)/P(B). Total Probability: P(B) = Σ P(B|Aᵢ)·P(Aᵢ)",
+    "example": "P(disease)=0.01, P(pos|disease)=0.99, P(pos|healthy)=0.05 → P(disease|pos)=0.99·0.01/(0.99·0.01+0.05·0.99)≈0.167"
+  },
+  {
+    "topic": "probability",
+    "formula": "Combinations: C(n,k) = n!/(k!·(n-k)!). Permutations: P(n,k) = n!/(n-k)!. C(n,k) = C(n,n-k)",
+    "example": "C(10,3) = 120. P(10,3) = 720. Ways to choose 3 from 10 without order = 120"
+  },
+  {
+    "topic": "probability",
+    "formula": "Permutations with repetition: n!/(p!·q!·r!…) where p,q,r are frequencies of repeated elements",
+    "example": "Arrangements of MISSISSIPPI: 11!/(4!·4!·2!) = 34650"
+  },
+  {
+    "topic": "probability",
+    "formula": "Conditional probability: P(A|B) = P(A∩B)/P(B). Independent events: P(A∩B)=P(A)·P(B). Mutually exclusive: P(A∪B)=P(A)+P(B)",
+    "example": "P(A)=0.3, P(B)=0.5, P(A∩B)=0.15 → independent since 0.3×0.5=0.15"
+  },
+  {
+    "topic": "probability",
+    "formula": "Binomial Distribution: P(X=k) = C(n,k)·pᵏ·(1-p)ⁿ⁻ᵏ. Mean=np, Variance=np(1-p)",
+    "example": "10 coin flips, P(exactly 3 heads) = C(10,3)·(0.5)¹⁰ = 120/1024 ≈ 0.117"
+  },
+  {
+    "topic": "probability",
+    "formula": "Mean & Variance: Mean μ = Σxᵢ/n. Variance σ² = Σ(xᵢ-μ)²/n = (Σxᵢ²/n) - μ². Standard deviation σ = √(variance)",
+    "example": "Data: 2,4,4,4,5,5,7,9 → μ=40/8=5, σ²=[(4+1+1+1+0+0+4+16)/8]=27/8=3.375, σ≈1.84"
+  },
+  {
+    "topic": "arithmetic",
+    "formula": "Percentage: part/whole × 100. %change = (new-old)/old × 100. Successive %: after a% then b% → net = a+b+ab/100",
+    "example": "Price ₹100 → 20% increase → ₹120 → 10% decrease → ₹108. Net change = 20-10-200/100 = 8%"
+  },
+  {
+    "topic": "arithmetic",
+    "formula": "Simple Interest: I=Prt. Compound Interest: A=P(1+r/n)^(nt). Amount after t years at rate r compounded n times per year",
+    "example": "P=1000, r=10%, t=2yr → SI=200, CI=P(1.1)²-P=1210-1000=210"
+  },
+  {
+    "topic": "common_mistakes",
+    "formula": "MISTAKE: √(a²+b²) ≠ a+b. The square root of a sum is NOT the sum of square roots.",
+    "example": "√(3²+4²) = √25 = 5, NOT 3+4=7"
+  },
+  {
+    "topic": "common_mistakes",
+    "formula": "MISTAKE: (a+b)² ≠ a²+b². Must expand: (a+b)² = a²+2ab+b².",
+    "example": "(3+4)² = 49, NOT 9+16=25. Correct: 9+24+16=49"
+  },
+  {
+    "topic": "common_mistakes",
+    "formula": "MISTAKE: When dividing both sides of an inequality by a negative number, FLIP the inequality sign.",
+    "example": "-2x > 6 → x < -3 (flip >), NOT x > -3"
+  },
+  {
+    "topic": "common_mistakes",
+    "formula": "MISTAKE: d/dx[f·g] ≠ f'·g'. Must use product rule: f'g + fg'.",
+    "example": "d/dx[x·sin(x)] = sin(x)+x·cos(x), NOT 1·cos(x)"
+  },
+  {
+    "topic": "common_mistakes",
+    "formula": "MISTAKE: log(a+b) ≠ log(a)+log(b). The log of a sum is NOT the sum of logs. log(a·b) = log(a)+log(b).",
+    "example": "log(2+3)=log(5)≈0.699, but log(2)+log(3)≈0.778"
+  },
+  {
+    "topic": "common_mistakes",
+    "formula": "MISTAKE: Forgetting +C in indefinite integrals. ∫f(x)dx = F(x) + C, not just F(x).",
+    "example": "∫2x dx = x² + C, NOT just x²"
+  },
+  {
+    "topic": "common_mistakes",
+    "formula": "MISTAKE: Confusing P(n,r) and C(n,r). Permutation (order matters) vs Combination (order doesn't). P(n,r) = r! · C(n,r)",
+    "example": "Choosing 3 from 5: C(5,3)=10 (committees), P(5,3)=60 (arrangements)"
+  },
+  {
+    "topic": "common_mistakes",
+    "formula": "MISTAKE: sin⁻¹(sin(x)) ≠ x always. Only true when x ∈ [-π/2, π/2] for sin⁻¹. Check the principal value range.",
+    "example": "sin⁻¹(sin(5π/6)) = π - 5π/6 = π/6, NOT 5π/6"
+  },
+  {
+    "topic": "common_mistakes",
+    "formula": "MISTAKE: det(kA) ≠ k·det(A) for n×n matrix. Correct: det(kA) = kⁿ·det(A).",
+    "example": "A is 3×3, det(A)=2 → det(3A) = 3³·2 = 54, NOT 6"
+  },
+  {
+    "topic": "solution_template",
+    "formula": "TEMPLATE – Optimization (Calculus): 1) Define objective f(x), 2) Find f'(x)=0, 3) Solve for critical points, 4) Use second derivative test, 5) Check domain boundaries.",
+    "example": "Maximize area A=x(100-2x): A'=100-4x=0 → x=25, A''=-4<0 → max. A(25)=1250"
+  },
+  {
+    "topic": "solution_template",
+    "formula": "TEMPLATE – System of Linear Equations: 1) Write in matrix form Ax=b, 2) Use elimination or Cramer's rule, 3) Check solution by substitution.",
+    "example": "x+y=5, 2x-y=1 → add: 3x=6 → x=2, y=3. Check: 2+3=5 ✓, 4-3=1 ✓"
+  },
+  {
+    "topic": "solution_template",
+    "formula": "TEMPLATE – Probability word problems: 1) Identify sample space, 2) Define events, 3) Check independence/mutual exclusivity, 4) Apply formula (addition/multiplication rule, Bayes, combinations).",
+    "example": "Drawing 2 cards: P(both aces) = C(4,2)/C(52,2) = 6/1326 ≈ 0.0045"
+  },
+  {
+    "topic": "solution_template",
+    "formula": "TEMPLATE – Conic Section Identification: 1) Write general form ax²+2hxy+by²+2gx+2fy+c=0, 2) Compute Δ=abc+2fgh-af²-bg²-ch². 3) If Δ≠0: h²<ab→ellipse, h²=ab→parabola, h²>ab→hyperbola.",
+    "example": "4x²+9y²-16x-54y+61=0 → a=4,b=9,h=0 → h²=0<36=ab → ellipse ✓"
+  },
+  {
+    "topic": "solution_template",
+    "formula": "TEMPLATE – Differential Equation: 1) Identify type (separable / linear / homogeneous / exact), 2) Apply appropriate method, 3) Find general solution with constant C, 4) Apply initial conditions if given.",
+    "example": "dy/dx + 2y = e⁻ˣ → IF=e²ˣ → ye²ˣ = ∫eˣdx = eˣ+C → y = e⁻ˣ+Ce⁻²ˣ"
+  },
+  {
+    "topic": "solution_template",
+    "formula": "TEMPLATE – Vector/3D problems: 1) Express given info as position vectors or direction vectors, 2) Use dot/cross product as needed, 3) Find equation of line/plane, 4) Compute distances/angles.",
+    "example": "Shortest distance between parallel lines r⃗=a⃗₁+λb⃗ and r⃗=a⃗₂+μb⃗: d = |(a⃗₂-a⃗₁)×b⃗|/|b⃗|"
+  }
+]
