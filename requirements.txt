@@ -6,7 +6,7 @@ streamlit>=1.30.0
 openai>=1.0.0
 
 # Vector store for RAG & Memory
-chromadb>=0.4.22
+chromadb>=0.6.0
 
 # Math OCR — Pix2Tex (LaTeX OCR, offline, specialised for math equations)
 pix2tex>=0.1.0
