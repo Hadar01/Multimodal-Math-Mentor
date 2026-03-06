@@ -188,8 +188,8 @@ app.py
 ### 1. Clone the repository
 
 ```bash
-git clone <repo-url>
-cd AI_Planet_Assignment
+git clone https://github.com/Hadar01/Multimodal-Math-Mentor.git
+cd Multimodal-Math-Mentor
 ```
 
 ### 2. Create a virtual environment (recommended)
