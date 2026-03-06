@@ -11,9 +11,8 @@ import re
 from pathlib import Path
 
 import streamlit as st
-import chromadb
 
-from config import KB_PATH, DOCS_DIR, CHROMA_DIR
+from config import KB_PATH, DOCS_DIR, CHROMA_DIR, ENABLE_CHROMA, LOW_MEMORY_MODE
 
 
 # ── Chunking configuration ─────────────────────────────────────
@@ -165,6 +164,15 @@ def _load_pdf_chunks(pdf_path: Path, chunk_size: int = PDF_CHUNK_SIZE, overlap: 
 @st.cache_resource(show_spinner="Loading knowledge base into vector store …")
 def get_rag_collection():
     """Build (or reload) the RAG collection from JSON + PDFs."""
+    if not ENABLE_CHROMA:
+        return None
+
+    try:
+        import chromadb
+    except Exception:
+        st.warning("ChromaDB unavailable; RAG retrieval disabled.")
+        return None
+
     CHROMA_DIR.mkdir(parents=True, exist_ok=True)
     client = chromadb.PersistentClient(path=str(CHROMA_DIR))
 
@@ -219,8 +227,19 @@ def get_rag_collection():
 
 def rag_retrieve(query: str, n_results: int = 3) -> list[str]:
     """Return top-N matching documents from the knowledge base."""
+    if not ENABLE_CHROMA:
+        return ["(RAG disabled in low-memory mode)"]
+
     collection = get_rag_collection()
+    if collection is None:
+        return ["(RAG unavailable)"]
+
     if collection.count() == 0:
         return ["(No knowledge-base entries found.)"]
+
+    # Reduce query fan-out in low-memory mode when explicitly enabled.
+    if LOW_MEMORY_MODE:
+        n_results = min(n_results, 2)
+
     results = collection.query(query_texts=[query], n_results=n_results)
     return results["documents"][0]
