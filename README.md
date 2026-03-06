@@ -7,6 +7,7 @@ sdk: streamlit
 app_file: app.py
 pinned: false
 ---
+For HuggingFace
 <div align="center">
 
 # 🧮 Multimodal Math Mentor
