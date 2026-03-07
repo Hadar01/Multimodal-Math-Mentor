@@ -11,6 +11,44 @@ import streamlit as st
 from config import CHROMA_DIR, ENABLE_CHROMA
 
 
+def _truncate(text: str, limit: int = 280) -> str:
+    """Trim long text for compact display/prompt context."""
+    cleaned = " ".join((text or "").split())
+    if len(cleaned) <= limit:
+        return cleaned
+    return cleaned[: limit - 1].rstrip() + "..."
+
+
+def _format_memory_doc(doc: str) -> str:
+    """Convert a stored JSON memory record into a readable summary block."""
+    try:
+        record = json.loads(doc)
+    except json.JSONDecodeError:
+        return _truncate(doc, limit=320)
+
+    question = record.get("parsed_question") or record.get("original_input") or "Unknown question"
+    final_answer = record.get("final_answer") or ""
+    verifier = record.get("verifier_outcome") or {}
+    confidence = verifier.get("confidence", "unknown")
+    feedback = record.get("user_feedback")
+
+    lines = [
+        f"**Similar Question:** {_truncate(question, limit=180)}",
+        f"**Previous Answer:** {_truncate(final_answer, limit=260)}",
+        f"**Verifier Confidence:** {confidence}",
+    ]
+
+    if isinstance(feedback, dict) and feedback.get("label"):
+        label = str(feedback.get("label", "")).capitalize()
+        comment = _truncate(str(feedback.get("comment", "")), limit=120)
+        if comment:
+            lines.append(f"**User Feedback:** {label} - {comment}")
+        else:
+            lines.append(f"**User Feedback:** {label}")
+
+    return "\n".join(lines)
+
+
 @st.cache_resource(show_spinner="Initializing memory store …")
 def get_memory_collection():
     """Return (or create) the ChromaDB collection for solved-problem memory."""
@@ -45,7 +83,7 @@ def memory_search(query: str, n_results: int = 2) -> str:
     results = collection.query(query_texts=[query], n_results=n_results)
     docs = results["documents"][0]
     if docs:
-        return "\n---\n".join(docs)
+        return "\n\n---\n\n".join(_format_memory_doc(doc) for doc in docs)
     return ""
 
 
